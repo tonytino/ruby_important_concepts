@@ -78,9 +78,13 @@ A classic example of what this could be used for is accessing all instances of s
 
 Just like before, to 'extend' a class, you would use the same methodology as you do for 'include' and 'prepend', replacing either with the word 'extend'.
 
-## Nil vs False
+## Nil and False
 
-*Coming soon*
+Nil is a curious object in that it's also a nonobject; its boolean value is false, it represents the absence (or non-existence) of something (try calling on an undefined instance variable or undefined hash key), yet it's still an object with methods available.
+
+More interesting, Nil and False are both objects (try running `FalseClass.ancestors` or `NilClass.ancestors` in irb), and happen to be the only objects in Ruby that have boolean values of false. Further, nil actually responds to #to_s (returns "") and is represented by 0 (`nil.to_i # => 0`), but when compared, returns false (`nil == 0 # => false`).
+
+**Note:** Nil is *not* a boolean; only true and false are. It simply evaluates to false.
 
 ## 4 Ways to Invoke a Method in Ruby
 
@@ -122,3 +126,26 @@ In general, you can use encapsulation for any purpose you see fit by enclosing w
 
 ## Proc
 
+Short for procedures, Procs are essentially blocks that you can save for use later (a convenient way to prevent repeating yourself).
+
+Ruby actually has a Proc class, which you can use when creating a Proc for use later.
+
+Assume: `cube_prok = Proc.new {|var| var ** 3}`
+
+Example: `cube_prok.call(3) # => 27`
+
+Example: `cube_prok.call(2) # => 8`
+
+Assume: `arr = [1,2,3]`
+
+Example: `arr.each {|num| p cube_prok.call(num)} # => 1, 8, 27 `
+
+# My Additions
+
+## Lambda
+
+*Coming soon*
+
+## Closure
+
+*Coming soon*
