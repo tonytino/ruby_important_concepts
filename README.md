@@ -16,7 +16,7 @@ Below are some additional examples of literal constructors:
 
 - **Hash:** {'One' => 1, 'Two' => 2, 'Three' => 3}
 
-- **Range:** 1..3 or 1...3
+- **Range:** (1..3) or (1...3)
 
 - **Proc (lambda):** ->(a,b) {a * b}
 
