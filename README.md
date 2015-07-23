@@ -12,13 +12,13 @@ As implied earlier, not all of Ruby's built-in classes include this option, such
 
 Below are some additional examples of literal constructors:
 
-- **Array** [1,2,3]
+- **Array:** [1,2,3]
 
-- **Hash** {'One' => 1, 'Two' => 2, 'Three' => 3}
+- **Hash:** {'One' => 1, 'Two' => 2, 'Three' => 3}
 
-- **Range** 1..3 or 1...3
+- **Range:** 1..3 or 1...3
 
-- **Proc (lambda)** ->(a,b) {a * b}
+- **Proc (lambda):** ->(a,b) {a * b}
 
 [Check out the Ruby Docs page for creating Arrays](http://ruby-doc.org/core-2.2.0/Array.html)
 
@@ -52,9 +52,9 @@ In Ruby, you have access to built-in Modules such as Comparable or Enumerable, w
 
 The key differences are:
 
-- Unlike with inheritance, you can have a class utilize numerous modules.
+- Unlike with inheritance, you can have a class utilize numerous modules
 
-- You *cannot* create instances of modules.
+- You *cannot* create instances of modules
 
 ### Include (and Prepend)
 
@@ -80,41 +80,45 @@ Just like before, to 'extend' a class, you would use the same methodology as you
 
 ## Nil vs False
 
+*Coming soon*
+
 ## 4 Ways to Invoke a Method in Ruby
 
 The following options are in order of efficiency. The last three allow you to dynamically invoke a method.
 
 1. Call the method directly on your object
 
-Example `str.length`
+    Example: `str.length`
 
-Example `str.split`
+    Example: `str.split`
 
 2. Use #send to invoke a method using a string or symbol representing the method name
 
-Example: `str.send('size')`
+    Example: `str.send('size')`
 
-Example: `str.send(:split, '')`
+    Example: `str.send(:split, '')`
 
 3. Create a method object and call it
 
-Assume: `str = "hey hi"`
+    Assume: `str = "hey hi"`
 
-Assume: `method_obj = str.method(:split)`
+    Assume: `method_obj = str.method(:split)`
 
-Example: `method_obj.call # => ['hey', 'hi']`
+    Example: `method_obj.call # => ['hey', 'hi']`
 
-Example: `method_obj.call('') # => ['h','e','y',' ','h','i']`
+    Example: `method_obj.call('') # => ['h','e','y',' ','h','i']`
 
 4. Use 'eval' to invoke a method using a string representing the instance name followed by the method name being called
 
-Example: `eval 'str.count'`
+    Example: `eval 'str.count'`
 
-Example: `eval 'str.split('')'`
+    Example: `eval 'str.split('')'`
 
 ## Encapsulation
 
 Encapsulation is accomplished by several means in Ruby, including using modules to collect and isolate behaviors (read: methods) and using objects to collect and isolate actions and data.
+
+In general, you can use encapsulation for any purpose you see fit by enclosing whatever you are encapsulating in something such as a variable, a method, an object, a module, a class, etc.
 
 ## Proc
 
